@@ -3,14 +3,15 @@ This is a very simple iOS chat application written in Swift 5.0. Ejjaberd is use
 
 
 ## Final product:
-![Final Product](FinalProduct.png)
+![Final Product](Screenshots/FinalProduct.png)
 
 ## Getting Started
 These instructions will get this chat application, your XMPP server and a client set up and running. It will allow chatting between 2 clients which we will set up as well.
 
 ## Development procedure:
-1. ### Download ejjaberd: [Download Ejjaberd](https://www.process-one.net/en/ejabberd/downloads/)
-    1. I used ejjaberd 15.09 
+1. ### Download ejjaberd: 
+    1. [Download Ejjaberd](https://www.process-one.net/en/ejabberd/downloads/)
+    2. I used ejjaberd 15.09 
 2. ### Install ejjaberd:
     1. Open the dmg file
     2. Select your preferred language
