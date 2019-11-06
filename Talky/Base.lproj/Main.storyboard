@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Talky" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xCT-ZO-fSp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="752"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatMessageTBCell" id="dL6-K1-x4w" customClass="ChatMessageTBCell" customModule="Talky" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dL6-K1-x4w" id="3bo-Ss-8zh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9P-h9-qvZ">
+                                                    <rect key="frame" x="20" y="11" width="13.5" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="260" id="Nv4-ZK-OH6"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="ak5-eg-1jk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="N9P-h9-qvZ" firstAttribute="leading" secondItem="3bo-Ss-8zh" secondAttribute="leadingMargin" id="0NB-IO-hWj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="N9P-h9-qvZ" secondAttribute="trailing" id="OEO-v7-N1h"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="N9P-h9-qvZ" secondAttribute="bottom" id="elU-K7-eav"/>
+                                                <constraint firstItem="N9P-h9-qvZ" firstAttribute="top" secondItem="3bo-Ss-8zh" secondAttribute="topMargin" id="m1x-KS-MLM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="chatMessage" destination="N9P-h9-qvZ" id="SxK-Jn-OS8"/>
+                                            <outlet property="leftMarginConstraint" destination="0NB-IO-hWj" id="OlE-rO-68o"/>
+                                            <outlet property="rightMarginConstraint" destination="OEO-v7-N1h" id="wFt-8A-9cJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ozo-YP-iTF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mXa-f3-UsK"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMG-cg-Iaj">
+                                <rect key="frame" x="378" y="832" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1aw-vU-Pkn"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Message goes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tvw-4E-00J">
+                                <rect key="frame" x="10" y="806" width="363" height="80"/>
+                                <color key="backgroundColor" red="0.87457496759999998" green="0.87457496759999998" blue="0.87457496759999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="3Lg-en-OAS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qMG-cg-Iaj" firstAttribute="leading" secondItem="Tvw-4E-00J" secondAttribute="trailing" constant="5" id="3o7-Vt-Sit"/>
+                            <constraint firstItem="Tvw-4E-00J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="CT0-IO-92y"/>
+                            <constraint firstAttribute="bottom" secondItem="Tvw-4E-00J" secondAttribute="bottom" constant="10" id="ELM-fD-pye"/>
+                            <constraint firstItem="xCT-ZO-fSp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LLk-Nu-2cY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qMG-cg-Iaj" secondAttribute="trailing" id="QiK-vg-tvD"/>
+                            <constraint firstItem="Tvw-4E-00J" firstAttribute="top" secondItem="xCT-ZO-fSp" secondAttribute="bottom" constant="10" id="UgI-eE-XXb"/>
+                            <constraint firstItem="xCT-ZO-fSp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cYD-nt-FZG"/>
+                            <constraint firstItem="qMG-cg-Iaj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fdR-Mp-N9t"/>
+                            <constraint firstItem="xCT-ZO-fSp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uQt-vq-BOa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageTextView" destination="Tvw-4E-00J" id="I7c-3b-0Br"/>
+                        <outlet property="messagesTable" destination="xCT-ZO-fSp" id="Ev7-Ja-w8X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+</document>
